@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gke-app-source
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gke-app-source
+  template:
+    metadata:
+      labels:
+        app: gke-app-source
+    spec:
+      containers:
+      - name: app-container
+        image: us-central1-docker.pkg.dev/devops-gke-project/devops-gke-project/gke-app-source:initial
+        ports:
+        - containerPort: 8080
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name

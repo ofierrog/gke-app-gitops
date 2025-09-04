@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gke-app-source
+  name: hello-world-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: gke-app-source
+      app: hello-world
   template:
     metadata:
       labels:
-        app: gke-app-source
+        app: hello-world
     spec:
       containers:
       - name: app-container

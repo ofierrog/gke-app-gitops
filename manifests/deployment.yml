@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: app-container
-        image: us-central1-docker.pkg.dev/devops-gke-project/devops-gke-project/gke-app-source:initial
+        image: us-central1-docker.pkg.dev/devops-gke-project/devops-gke-project/gke-app-source:201354a2c2240f47a04a69e0d4ec30284adca14c
         ports:
         - containerPort: 8080
         env:
